@@ -22,6 +22,14 @@ namespace PlacesIveBeen.Tests
     }
 
     [TestMethod]
+    public void OverloadedConstructor_AddsImage_String()
+    {
+      string imageLink = "https://en.wikipedia.org/wiki/Portland,_Oregon#/media/File:Portland_and_Mt._Hood_from_Pittock_Mansion.jpg";
+      Place newPlace = new Place("Portland", "is a cool place", "9/29/2021", "Melissa", imageLink);
+      Assert.AreEqual(imageLink, newPlace.Image);
+    }
+
+    [TestMethod]
     public void Getters_ReturnProperValues_String()
     {
       //Arrange

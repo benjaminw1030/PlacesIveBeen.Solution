@@ -20,6 +20,12 @@ namespace PlacesIveBeen.Controllers
       return View();
     }
 
+    [HttpGet("/places/newimage")]
+    public ActionResult NewImage()
+    {
+      return View();
+    }
+
     [HttpGet("/places/{id}")]
     public ActionResult Show(int id)
     {
@@ -28,9 +34,9 @@ namespace PlacesIveBeen.Controllers
     }
 
     [HttpPost("/places")]
-    public ActionResult Create(string cityName, string notes, string dateVisited, string travelCompanion)
+    public ActionResult Create(string cityName, string notes, string dateVisited, string travelCompanion, string image)
     {
-      Place myPlace = new Place(cityName, notes, dateVisited, travelCompanion);
+      Place myPlace = new Place(cityName, notes, dateVisited, travelCompanion, image);
       return RedirectToAction("Index");
     }
 

@@ -8,15 +8,17 @@ namespace PlacesIveBeen.Models
     public string Notes { get; set; }
     public string DateVisited { get; set; }
     public string TravelCompanion { get; set; }
+    public string Image { get; set; }
     public int Id { get; }
     private static List<Place> _places = new List<Place> {};
 
-    public Place(string cityName, string notes, string dateVisited, string travelCompanion)
+    public Place(string cityName, string notes, string dateVisited, string travelCompanion, string image)
     {
       CityName = cityName;
       Notes = notes;
       DateVisited = dateVisited;
       TravelCompanion = travelCompanion;
+      Image = image;
       _places.Add(this);
       Id = _places.Count;
     }

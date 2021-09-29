@@ -2,6 +2,10 @@
 
 <h2>@Model.CityName</h2>
 <P>I visited @Model.CityName on @Model.DateVisited with @Model.TravelCompanion.</P>
+@if (Model.Image != "")
+{
+<a href="@Model.Image">Image Link</a>
+}
 <p>@Model.Notes</p>
 
 <a href='/places/new'>Add another place</a>
