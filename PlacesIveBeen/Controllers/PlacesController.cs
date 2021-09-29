@@ -1,45 +1,45 @@
-// using Microsoft.AspNetCore.Mvc;
-// using PlacesIveBeen.Models;
-// using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using PlacesIveBeen.Models;
+using System.Collections.Generic;
 
-// namespace PlacesIveBeen.Controllers
-// {
-//   public class PlacesController : Controller
-//   {
+namespace PlacesIveBeen.Controllers
+{
+  public class PlacesController : Controller
+  {
 
-//     [HttpGet("/items")]
-//     public ActionResult Index()
-//     {
-//       List<Item> allItems = Item.GetAll();
-//       return View(allItems);
-//     }
+    [HttpGet("/places")]
+    public ActionResult Index()
+    {
+      List<Place> allPlaces = Place.GetAll();
+      return View(allPlaces);
+    }
 
-//     [HttpGet("/items/new")]
-//     public ActionResult New()
-//     {
-//       return View();
-//     }
+    [HttpGet("/places/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
 
-//     [HttpGet("/items/{id}")]
-//     public ActionResult Show(int id)
-//     {
-//       Item foundItem = Item.Find(id);
-//       return View(foundItem);
-//     }
+    [HttpGet("/places/{id}")]
+    public ActionResult Show(int id)
+    {
+      Place foundPlace = Place.Find(id);
+      return View(foundPlace);
+    }
 
-//     [HttpPost("/items")]
-//     public ActionResult Create(string description)
-//     {
-//       Item myItem = new Item(description);
-//       return RedirectToAction("Index");
-//     }
+    [HttpPost("/places")]
+    public ActionResult Create(string cityName, string notes, string dateVisited, string travelCompanion)
+    {
+      Place myPlace = new Place(cityName, notes, dateVisited, travelCompanion);
+      return RedirectToAction("Index");
+    }
 
-//     [HttpPost("/items/delete")]
-//     public ActionResult DeleteAll()
-//     {
-//       Item.ClearAll();
-//       return View();
-//     }
+    [HttpPost("/places/delete")]
+    public ActionResult DeleteAll()
+    {
+      Place.ClearAll();
+      return View();
+    }
 
-//   }
-// }
+  }
+}
